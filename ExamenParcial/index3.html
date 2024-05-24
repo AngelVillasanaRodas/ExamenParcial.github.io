@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinador de Categoría de Edad</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Determinador de Categoría de Edad</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var edad = parseInt(prompt("Ingrese la edad de la persona:"));
+                var categoria;
+
+                // Determinación de la categoría de edad
+                if (edad <= 10) {
+                categoria = "NIÑO";
+                } else if (edad <= 15) {
+                categoria = "PUBER";
+                } else if (edad <= 19) {
+                categoria = "ADOLESCENTE";
+                } else if (edad <= 26) {
+                categoria = "JOVEN";
+                } else if (edad <= 65) {
+                categoria = "ADULTO";
+                } else {
+                categoria = "ANCIANO";
+                }
+
+               // Salida
+               document.write("<p>======= Categoría de Edad =======</p>");
+               document.write("<p>Edad ingresada: " + edad + " años</p>");
+               document.write("<p>Categoría: " + categoria + "</p>");
+               document.write("<p>=================================</p>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

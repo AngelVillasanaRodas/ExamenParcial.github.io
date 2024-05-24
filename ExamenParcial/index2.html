@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo Mensual</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Calculadora de Sueldo Mensual</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var valorHora = parseFloat(prompt("Ingrese el valor por hora:"));
+                var horasTrabajadas = parseFloat(prompt("Ingrese el número de horas trabajadas en el mes:"));
+                var sueldo;
+
+                // Procesamiento de datos
+                if (horasTrabajadas <= 50) {
+                sueldo = valorHora * horasTrabajadas;
+                } else {
+                sueldo = (valorHora * 50) + (valorHora * 1.6 * (horasTrabajadas - 50));
+                }
+
+                // Salida
+                document.write("<p>======= Detalles del Sueldo Mensual =======</p>");
+                document.write("<p>Valor por hora: S/. " + valorHora.toFixed(2) + "</p>");
+                document.write("<p>Horas trabajadas en el mes: " + horasTrabajadas + "</p>");
+                document.write("<p>Sueldo mensual: S/. " + sueldo.toFixed(2) + "</p>");
+                document.write("<p>===========================================</p>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

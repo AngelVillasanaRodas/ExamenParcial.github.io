@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Servicios Turísticos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Calculadora de Servicios Turísticos</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var paqueteTuristico = prompt("Ingrese el paquete turístico (Colca, Cusco, Máncora u otro):").toLowerCase();
+                var cantidadPersonas = parseInt(prompt("Ingrese la cantidad de personas:"));
+                var formaPago = prompt("Ingrese la forma de pago (contado, tarjeta, transferencia):").toLowerCase();
+                var precioPorPersona, precioTotal, impuesto, seguro, traslados, descuento, montoFinal;
+
+                // Calcular precio por persona según el paquete turístico
+                switch(paqueteTuristico) {
+                case "colca":
+                precioPorPersona = 550;
+                break;
+                case "cusco":
+                precioPorPersona = 700;
+                break;
+                case "máncora":
+                precioPorPersona = 450;
+                break;
+                default:
+                precioPorPersona = 440; 
+                }
+
+                // Calcular precio total
+                precioTotal = precioPorPersona * cantidadPersonas;
+
+                // Calcular impuesto
+                impuesto = precioTotal * 0.02;
+
+               // Calcular seguro por persona
+               seguro = 140 * cantidadPersonas;
+
+               // Calcular traslados por persona
+               traslados = 150 * cantidadPersonas;
+
+              // Calcular descuento según forma de pago
+              switch(formaPago) {
+            case "contado":
+            descuento = precioTotal * 0.1;
+            break;
+            case "tarjeta":
+            descuento = precioTotal * 0.05;
+            break;
+            default:
+            descuento = 0;
+            }
+
+            // Calcular monto final
+            montoFinal = precioTotal + impuesto + seguro + traslados - descuento;
+
+           // Mostrar resultados
+           document.write("<p>======= Detalles del Pago =======</p>");
+           document.write("<p>Paquete Turístico: " + paqueteTuristico.toUpperCase() + "</p>");
+           document.write("<p>Cantidad de Personas: " + cantidadPersonas + "</p>");
+           document.write("<p>Forma de Pago: " + formaPago.toUpperCase() + "</p>");
+           document.write("<p>Precio por Persona: S/. " + precioPorPersona.toFixed(2) + "</p>");
+           document.write("<p>Impuesto: S/. " + impuesto.toFixed(2) + "</p>");
+           document.write("<p>Seguro: S/. " + seguro.toFixed(2) + "</p>");
+           document.write("<p>Traslados: S/. " + traslados.toFixed(2) + "</p>");
+           document.write("<p>Descuento: S/. " + descuento.toFixed(2) + "</p>");
+           document.write("<p>Monto Final: S/. " + montoFinal.toFixed(2) + "</p>");
+           document.write("<p>=================================</p>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

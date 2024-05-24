@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Áreas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Calculadora de Áreas</h3>
+        <div id="resultado">
+            <script>
+                // Función para calcular el área de un cuadrado
+                function calcularAreaCuadrado(lado) {
+                return lado * lado;
+                }
+
+                // Función para calcular el área de un rectángulo
+                function calcularAreaRectangulo(base, altura) {
+                return base * altura;
+                }
+
+                // Función para calcular el área de un triángulo
+                function calcularAreaTriangulo(base, altura) {
+                return (base * altura) / 2;
+                }
+
+                // Función para calcular el área de un círculo
+                function calcularAreaCirculo(radio) {
+                return Math.PI * radio * radio;
+                }
+
+                // Solicitar al usuario que ingrese la opción y los datos necesarios
+                var opcion = parseInt(prompt("Ingrese la opción correspondiente al área que desea calcular:\n1. Cuadrado\n2. Rectángulo\n3. Triángulo\n4. Círculo"));
+                var area;
+
+                switch(opcion) {
+                case 1:
+                var lado = parseFloat(prompt("Ingrese el lado del cuadrado:"));
+                area = calcularAreaCuadrado(lado);
+                break;
+                case 2:
+                var base = parseFloat(prompt("Ingrese la base del rectángulo:"));
+                var altura = parseFloat(prompt("Ingrese la altura del rectángulo:"));
+                area = calcularAreaRectangulo(base, altura);
+                break;
+                case 3:
+                var base = parseFloat(prompt("Ingrese la base del triángulo:"));
+                var altura = parseFloat(prompt("Ingrese la altura del triángulo:"));
+                area = calcularAreaTriangulo(base, altura);
+                break;
+                case 4:
+                var radio = parseFloat(prompt("Ingrese el radio del círculo:"));
+                area = calcularAreaCirculo(radio);
+                break;
+                default:
+                area = "Operación no permitida";
+                }
+
+                // Mostrar el resultado
+                document.write("<p>======= Resultado =======</p>");
+                document.write("<p>Área calculada: " + (area === "Operación no permitida" ? area : area.toFixed(2)) + "</p>");
+                document.write("<p>=========================</p>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

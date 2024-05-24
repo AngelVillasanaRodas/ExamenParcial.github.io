@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Compra de Camisas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Calculadora de Compra de Camisas</h3>
+        <div id="resultado"> 
+            <script>
+                // Declaración de variables
+                var precioUnitario = 60;
+                var descuentoPorDocena = 0.1;
+                var cantidad = parseInt(prompt("Ingrese la cantidad de camisas compradas:"));
+                var importeTotal, descuento, costoFinal;
+
+                // Procesamiento de datos
+                if (cantidad >= 3) {
+               // Si se compran al menos 3 camisas, se aplica el descuento del 10%
+             importeTotal = cantidad * precioUnitario;
+             descuento = importeTotal * descuentoPorDocena;
+             costoFinal = importeTotal - descuento;
+             } else {
+             // Si se compran menos de 3 camisas, no hay descuento
+             costoFinal = cantidad * precioUnitario;
+            }
+
+            // Salida
+            document.write("<p>======= Detalles de la Compra =======</p>");
+            document.write("<p>Cantidad de camisas compradas: " + cantidad + "</p>");
+            document.write("<p>Importe total: S/. " + importeTotal.toFixed(2) + "</p>");
+            if (descuento) {
+            document.write("<p>Descuento aplicado: S/. " + descuento.toFixed(2) + "</p>");
+            }
+            document.write("<p>Costo final: S/. " + costoFinal.toFixed(2) + "</p>");
+            document.write("<p>====================================</p>");
+            </script>   
+        </div>
+    </div>
+</body>
+</html>
